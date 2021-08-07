@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from './nav'
 import Bottom from './bottom'
 
-const Play = () => {
+const About = () => {
     return (
         <div>
             <Nav></Nav>
@@ -11,4 +11,4 @@ const Play = () => {
     )
 }
 
-export default Play;
+export default About;

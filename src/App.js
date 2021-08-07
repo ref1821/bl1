@@ -4,6 +4,8 @@ import {
 } from "react-router-dom";
 import Home from "./components/home";
 import Play from "./components/play";
+import Games from "./components/games";
+import About from "./components/about";
 
 
 function App() {
@@ -11,6 +13,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route path="/games" exact>
+            <Games></Games>
+          </Route>
+          <Route path="/about" exact>
+            <About></About>
+          </Route>
           <Route path="/play" exact>
             <Play></Play>
           </Route>
