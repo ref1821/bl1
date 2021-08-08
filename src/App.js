@@ -18,7 +18,7 @@ function App() {
           </Route>
           <Route path="/about" exact>
             <About></About>
-          </Route>
+          </Route> 
           <Route path="/play" exact>
             <Play></Play>
           </Route>
