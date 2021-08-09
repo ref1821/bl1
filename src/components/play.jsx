@@ -24,8 +24,15 @@ const Play = () => {
 
     var dnum = num[Math.floor(Math.random()*num.length)];
     var dnum2 = num[Math.floor(Math.random()*num.length)];
+
+    var cnum = num[Math.floor(Math.random()*num.length)];
+    var cnum2 = num[Math.floor(Math.random()*num.length)];
     
     var totalUno = dnum + dnum2;
+
+    const New = () => {
+        console.log('works')
+    }
 
     const [Numbers, setNumbers] = useState()
 
@@ -33,16 +40,19 @@ const Play = () => {
         console.log('works')
     }
     return (
-        <div className="play">
+        <div>
             <Nav></Nav>
-            <button onClick={How}>How to play</button>
-            <div className="person">
-                <h2 className='letter'>Your numbers</h2>
-                <p>Your numbers are {dnum} and {dnum2}</p>
-
-            </div>
-            <div className='compu'>
-                <h2 className='letter'>Computer's numbers</h2>
+            <div className="play">
+                <button onClick={How} className='how'>How to play</button>
+                <div className="person">
+                    <h2 className='letter'>Your numbers</h2>
+                    <p>Your numbers are {dnum} and {dnum2}</p>
+                    <button onClick={New}>New number</button>
+                </div>
+                <div className='compu'>
+                    <h2 className='letter'>Computer's numbers</h2>
+                    <p>Computer's numbers are {cnum} and *</p>
+                </div>
             </div>
             <Bottom></Bottom>
         </div>
