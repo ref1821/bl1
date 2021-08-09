@@ -16,12 +16,12 @@ const Bottom = () => {
                 </a>
             </div>
             <div>
-                <a href='https://l.instagram.com/?u=https%3A%2F%2Fref1821.github.io%2Fwdes798%2F&e=ATMcTHv0yeAhBuAirJfn4H-9xEtbGWAPaL2tz9q2asCXq7JIoCXbh0qNKmQu4nlvhln0-KMYdlmaH9YbZTrvItA&s=1'>
+                <a href='https://ref1821.github.io/wdes798/'>
                     <FontAwesomeIcon icon={faHome} className="home"/>
                 </a>
             </div>
             <div>
-                <a>
+                <a href='https://ref1821.github.io/wdes798/about'>
                     <FontAwesomeIcon icon={faPhone} className="contact"/>
                 </a>
             </div>

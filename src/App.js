@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  BrowserRouter as Router, Switch, Route, Link, NavLink
+  BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
 import Home from "./components/home";
 import Play from "./components/play";
