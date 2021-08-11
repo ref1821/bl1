@@ -33,8 +33,9 @@ const Pl = () => {
 
     const [totalUno, setNumbers] = useState(dnum+dnum2)
     const [cTot, setTot] = useState(cnum+cnum2)
+    
 
-    /*const Cpu21 = () => {
+    const Cpu21 = () => {
         if(cTot<=21 & cTot>=15){
             if (alet === 'yes'){
                 var cnum3 = num[Math.floor(Math.random()*num.length)];
@@ -61,7 +62,7 @@ const Pl = () => {
                     <p>Lost</p>
                 )
             }
-        }*/
+        }
     
 
     return (
@@ -80,7 +81,7 @@ const Pl = () => {
                     
                 </div>
                 <div>
-                    <button>Finish Game</button>
+                    <button onClick={Cpu21}>Finish Game</button>
                 </div>
         </div>
     )
