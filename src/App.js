@@ -13,16 +13,16 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/games" exact>
+          <Route path="/react-blackjack/games" exact>
             <Games></Games>
           </Route>
-          <Route path="/about" exact>
+          <Route path="/react-blackjack/about" exact>
             <About></About>
           </Route> 
-          <Route path="/play" exact>
+          <Route path="/react-blackjack/play" exact>
             <Play></Play>
           </Route>
-          <Route path="/home">
+          <Route path="/react-blackjack/home">
             <Home></Home>
           </Route>
           <Route path="/">
