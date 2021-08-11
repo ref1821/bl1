@@ -3,9 +3,14 @@ import Nav from './nav'
 import Bottom from './bottom'
 import './play.css'
 import {useState} from 'react'
+import { Fragment } from 'react'
+import {} from './New'
+import New from './New'
+import How from './How'
+import './New'
 
 const Play = () => {
-    //variables
+
     const as = 1;
     const dos = 2;
     const tres = 3;
@@ -25,37 +30,28 @@ const Play = () => {
     var dnum = num[Math.floor(Math.random()*num.length)];
     var dnum2 = num[Math.floor(Math.random()*num.length)];
 
-    var cnum = num[Math.floor(Math.random()*num.length)];
-    var cnum2 = num[Math.floor(Math.random()*num.length)];
-    
-    var totalUno = dnum + dnum2;
+    const [totalUno, setNumbers] = useState(dnum+dnum2)
 
-    const New = () => {
-        console.log('works')
-    }
-
-    const [Numbers, setNumbers] = useState()
-
-    const How = () => {
-        console.log('works')
-    }
     return (
-        <div>
+        <Fragment>
             <Nav></Nav>
             <div className="play">
-                <button onClick={How} className='how'>How to play</button>
+                <button className='how'>How to play</button>
                 <div className="person">
                     <h2 className='letter'>Your numbers</h2>
                     <p>Your numbers are {dnum} and {dnum2}</p>
-                    <button onClick={New}>New number</button>
+                    <h4>Total: {totalUno}</h4>
+                    <button >New number</button>
+                    <h1></h1>
                 </div>
                 <div className='compu'>
                     <h2 className='letter'>Computer's numbers</h2>
-                    <p>Computer's numbers are {cnum} and *</p>
+                    <p>Computer's numbers are {} and *</p>
+                    
                 </div>
             </div>
             <Bottom></Bottom>
-        </div>
+        </Fragment>
     )
 }
 
