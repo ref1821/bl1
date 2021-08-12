@@ -1,6 +1,7 @@
 import React from 'react'
 import './play.css'
 import {useState} from 'react'
+import How from './How'
 
 
 
@@ -33,7 +34,11 @@ const Pl = () => {
 
     const [totalUno, setNumbers] = useState(dnum+dnum2)
     const [cTot, setTot] = useState(cnum+cnum2)
-    
+    const [num1, setNum1] = useState(dnum)
+    const [num2, setNum2] = useState(dnum2)
+    const [numc, setNum3] = useState(cnum)
+    const [numc2, setNum4] = useState(cnum2)
+
 
     const Cpu21 = () => {
         if(cTot<=21 & cTot>=15){
@@ -67,22 +72,24 @@ const Pl = () => {
 
     return (
         <div className="play">
-                <button className='how'>How to play</button>
-                <div className="person">
-                    <h2 className='letter'>Your numbers</h2>
-                    <p>Your numbers are {dnum} and {dnum2}</p>
-                    <h4>Total: {totalUno}</h4>
-                    <button >New number</button>
-                    <h1></h1>
-                </div>
-                <div className='compu'>
-                    <h2 className='letter'>Computer's numbers</h2>
-                    <p>Computer's numbers are {cnum} and {cnum2}</p>
-                    
-                </div>
-                <div>
-                    <button onClick={Cpu21}>Finish Game</button>
-                </div>
+            
+                <How className='how'></How>
+            
+            <div className="person">
+                <h2 className='letter'>Your numbers</h2>
+                <p>Your numbers are {num1} and {num2}</p>
+                <h4>Total: {totalUno}</h4>
+                <button >New number</button>
+                <h1></h1>
+            </div>
+            <div className='compu'>
+                <h2 className='letter'>Computer's numbers</h2>
+                <p>Computer's numbers are {numc} and {numc2}</p>
+                
+            </div>
+            <div>
+                <button onClick={Cpu21}>Finish Game</button>
+            </div>
         </div>
     )
 }

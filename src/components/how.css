@@ -1,0 +1,13 @@
+#btn{
+    background-color: #0094319f;
+    border: 3px solid #dff9fb;
+    border-radius: 6px;
+    color: #fff;
+}
+#btn:hover{
+    color: #95afc0;
+    border-color: #95afc0;
+}
+#how{
+    color: #fff;
+}
