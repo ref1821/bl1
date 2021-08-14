@@ -1,0 +1,11 @@
+.bnn{
+    background-color: #0c8f52;
+    color: #fff;
+    border:2px solid #fff;
+    border-radius:8px;
+}
+.bnn:hover{
+    color: #95afc0;
+    border-color: #95afc0;
+    text-decoration: underline #fff;
+}

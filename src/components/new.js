@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './new.css'
 export class New extends Component {
     
     constructor(props) {
@@ -83,7 +84,7 @@ export class New extends Component {
                 <h2 className='letter'>Your numbers</h2>
                 <p>Your numbers are {this.state.num} and {this.state.num2}</p>
                 <p>Total: {this.state.totalUno}</p>
-                <button onClick={() => this.NN()}>New number</button>
+                <button onClick={() => this.NN()} className='bnn'>New number</button>
                 <p>{this.state.n}</p>
             </div>
         )

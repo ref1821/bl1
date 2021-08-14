@@ -1,10 +1,8 @@
 import React from 'react'
 import './play.css'
-import {useState} from 'react'
 import How from './How'
 import New from './new'
-import cnum3 from './new'
-
+import Compu from './compu'
 
 
 
@@ -26,27 +24,14 @@ const Pl = () => {
 
     var num = new Array(as, dos, tres, cuatro, cinco, seis, siete, ocho ,nueve, diez, joto, reina, rey);
     
-    var cnum = num[Math.floor(Math.random()*num.length)];
-    var cnum2 = num[Math.floor(Math.random()*num.length)];
     
-    
-    const [numc, setNum3] = useState(cnum)
-    const [numc2, setNum4] = useState(cnum2)
-
 
 
     return (
         <div className="play">
             <How className='how'></How>
             <New></New>
-            <div className='compu'>
-                <h2 className='letter'>Computer's numbers</h2>
-                <p>Computer's numbers are {numc} and {numc2}</p>
-                
-            </div>
-            <div>
-                <button>Finish Game</button>
-            </div>
+            <Compu></Compu>
         </div>
     )
 }
