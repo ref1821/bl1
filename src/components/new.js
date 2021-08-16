@@ -26,7 +26,7 @@ export class New extends Component {
             n:'',
             num:dnum,
             num2:dnum2,
-            cnum3: 0,
+            dnum3: 0,
             totalUno:dnum+dnum2,
             qwe: 0,
         }
@@ -55,12 +55,12 @@ export class New extends Component {
         var ale = new Array('yes', 'yes', 'yes', 'no', 'no')
         if (this.state.totalUno<=21){
             this.setState({
-                cnum3: num[Math.floor(Math.random()*num.length)],
+                dnum3: num[Math.floor(Math.random()*num.length)],
             },
             ()=>{
                 this.setState({
-                    n:this.state.n+'your new number is '+this.state.cnum3+'---------------------',
-                    totalUno: this.state.totalUno+this.state.cnum3,
+                    n:this.state.n+'your new number is '+this.state.dnum3+'---------------------',
+                    totalUno: this.state.totalUno+this.state.dnum3,
                 })
             })
         }
