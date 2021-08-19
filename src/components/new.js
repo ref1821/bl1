@@ -21,6 +21,8 @@ export class New extends Component {
         var num = new Array(as, dos, tres, cuatro, cinco, seis, siete, ocho ,nueve, diez, joto, reina, rey);
         var dnum=num[Math.floor(Math.random()*num.length)];
         var dnum2=num[Math.floor(Math.random()*num.length)];
+        var vnum1 = num[Math.floor(Math.random()*num.length)];
+        var vnum2 = num[Math.floor(Math.random()*num.length)];
 
         this.state = {
             n:'',
@@ -29,6 +31,15 @@ export class New extends Component {
             dnum3: 0,
             totalUno:dnum+dnum2,
             qwe: 0,
+            //compu
+            cnum: vnum1,
+            cnum2: vnum2,
+            cTotal:vnum1+vnum2,
+            cnum3:0,
+            fn:'',
+            //extras
+            no:0,
+            end:""
         }
         
         
@@ -37,6 +48,7 @@ export class New extends Component {
     }
 
     NN(){
+        if(this.state.no===0){
         const as = 1;
         const dos = 2;
         const tres = 3;
@@ -73,20 +85,113 @@ export class New extends Component {
             console.log(this.state.qwe)
         }
         
-        
+    }
     }
     
+    Finish() {
+        console.log(this.state.totalUno)
+        const as = 1;
+        const dos = 2;
+        const tres = 3;
+        const cuatro = 4;
+        const cinco = 5;
+        const seis = 6;
+        const siete = 7;
+        const ocho = 8;
+        const nueve = 9;
+        const diez = 10;
+        const joto = 10;
+        const reina = 10;
+        const rey = 10;
+        //arrays
+        var num = new Array(as, dos, tres, cuatro, cinco, seis, siete, ocho ,nueve, diez, joto, reina, rey);
+        var ale = new Array('yes', 'yes', 'yes', 'no', 'no');
+        var alet = ale[Math.floor(Math.random()*ale.length)];
+        //Generar el numero de la computadora
+        if(this.state.cTotal>=15&&this.state.cTotal<21&&this.state.no===0){
+            if(alet==='yes'){
+                this.setState({
+                    cnum3: num[Math.floor(Math.random()*num.length)],
+                },
+                ()=>{
+                    this.setState({
+                
+                        cTotal: this.state.cTotal+this.state.cnum3,
+                    },
+                    ()=>{this.setState({
+                        fn:"computer's number: "+this.state.cTotal
+                    })}
+                    )
+                })
+            }
+            else{this.setState({
+                fn:"computer's number: "+this.state.cTotal
+            })
+            }
+    }
+        else if(this.state.cTotal<15&&this.state.no===0){
+            this.setState({
+                cnum3: num[Math.floor(Math.random()*num.length)],
+            },
+            ()=>{
+                this.setState({
+            
+                    cTotal: this.state.cTotal+this.state.cnum3,
+                },
+                ()=>{
+                    this.setState({
+                    fn:"computer's number: "+this.state.cTotal
+                })}
+                )
+                
+            })
+    }
+        else if(this.state.no===0){this.setState({
+            fn:"computer's number: "+this.state.cTotal
+        })
+    }
+        this.setState({
+            no:this.state.no+1
+        })
+        //aqui acaba el generador
+        //comparasiones
+        if (this.state.cTotal===this.state.totalUno){
+            this.setState({
+                end: this.state.end+"Both win"
+            })
+        }
+        else if (this.state.totalUno>this.state.cTotal&&this.state.totalUno<=21){
+            this.setState({
+                end: this.state.end+"You win"
+            })
+        }
+    }
     render() {
         
         
         return (
-            <div className="person">
-                <h2 className='letter'>Your numbers</h2>
-                <p>Your numbers are {this.state.num} and {this.state.num2}</p>
-                <p>Total: {this.state.totalUno}</p>
-                <button onClick={() => this.NN()} className='bnn'>New number</button>
-                <p>{this.state.n}</p>
+            <div>
+                <div className="person">
+                    <h2 className='letter'>Your numbers</h2>
+                    <p>Your numbers are {this.state.num} and {this.state.num2}</p>
+                    <p>Total: {this.state.totalUno}</p>
+                    <button onClick={() => this.NN()} className='bnn'>New number</button>
+                    <p>{this.state.n}</p>
+                </div>
+            <div>
+                
+            <div className='compu'>
+                <h2 className='letter'>Computer's numbers</h2>
+                <p>Computer's numbers are {this.state.cnum}  and {this.state.cnum2} </p>
+                <p>{this.state.fn}</p>
+            
             </div>
+            <div>
+                <button onClick={()=>this.Finish()}>Finish Game</button>
+                <p>{this.state.end}</p>
+            </div>
+            </div>
+        </div>
         )
     }
 }
