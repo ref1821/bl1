@@ -166,6 +166,9 @@ class New extends Component {
             })
         }}
     }
+    NG(){
+        return
+    }
     render() {
         
         return (
@@ -173,7 +176,7 @@ class New extends Component {
                 <div className="person">
                     <h2 className='letter'>Your numbers</h2>
                     <p>Your numbers are {this.state.num} and {this.state.num2}</p>
-                    <p>Total: {this.state.totalUno}</p>
+                    <p className="letter">Total: {this.state.totalUno}</p>
                     <button onClick={() => this.NN()} className='bnn'>New number</button>
                     <p>{this.state.n}</p>
                 </div>
@@ -185,9 +188,11 @@ class New extends Component {
                     </div>
                     <div>
                         <button onClick={()=>this.Finish()} className="bnn">Finish Game</button>
-                        <p>{this.state.end}</p>
-                        
+                        <p className="letter">{this.state.end}</p>
                     </div>
+                </div>
+                <div className="ng">
+                    <button className="bnn">New game</button>
                 </div>
             </div>
         )

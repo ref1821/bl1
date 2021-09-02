@@ -10,9 +10,18 @@
     border-radius:8px;
     font-size: 20px;
     font-family:Lucida Sans Typewriter;
+    margin: 2%;
+    padding: 0.8%;
 }
 .bnn:hover{
     color: #95afc0;
     border-color: #95afc0;
-    
+}
+.letter{
+    color: #fff;
+    font-family:Lucida Sans Typewriter;
+    font-size: 20px;
+}
+.ng{
+    grid-column:1/3;
 }
