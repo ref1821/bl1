@@ -101,38 +101,39 @@ class New extends Component {
     
 
     Finish() {
-        //comparasiones
-        console.log(this.state.cTotal)
-        console.log(this.state.totalUno)
-        if(this.state.totalUno>21&&this.state.cTotal>21){
+        if(this.state.no===0){
+            //comparasiones
+            console.log(this.state.cTotal)
+            console.log(this.state.totalUno)
+            if(this.state.totalUno>21&&this.state.cTotal>21){
+                this.setState({
+                    end: this.state.end+"Both lose"
+                })}
+            else if(this.state.totalUno>21){
+                this.setState({
+                    end: this.state.end+"You lose"
+                })}
+            else if(this.state.cTotal>21){
+                this.setState({
+                    end: this.state.end+"You win"
+                })}
+            else if (this.state.cTotal===this.state.totalUno){
+                this.setState({
+                    end: this.state.end+"There's a tie"
+                })}
+            else if (this.state.totalUno>this.state.cTotal&&this.state.totalUno<=21){
+                this.setState({
+                    end: this.state.end+"You win"
+                })}
+            else if (this.state.totalUno<this.state.cTotal&&this.state.cTotal<=21){
+                this.setState({
+                    end: this.state.end+"Computer win"
+                })}
             this.setState({
-                end: this.state.end+"Both lose"
-            })}
-        else if(this.state.totalUno>21){
-            this.setState({
-                end: this.state.end+"You lose"
-            })}
-        else if(this.state.cTotal>21){
-            this.setState({
-                end: this.state.end+"You win"
-            })}
-        else if (this.state.cTotal===this.state.totalUno){
-            this.setState({
-                end: this.state.end+"There's a tie"
-            })}
-        else if (this.state.totalUno>this.state.cTotal&&this.state.totalUno<=21){
-            this.setState({
-                end: this.state.end+"You win"
-            })}
-        else if (this.state.totalUno<this.state.cTotal&&this.state.cTotal<=21){
-            this.setState({
-                end: this.state.end+"Computer win"
-            })}
-        this.setState({
-                no:this.state.no+1,
-                fn:"Computer's number: "+ this.state.cTotal
-            })   
-        }
+                    no:this.state.no+1,
+                    fn:"Computer's number: "+ this.state.cTotal
+                })   
+        }}
     
     NN(){
         if(this.state.no===0){
@@ -155,12 +156,12 @@ class New extends Component {
                 dnum3: num[Math.floor(Math.random()*num.length)],
             },()=>{
                 this.setState({
-                    n:this.state.n+'your new number is '+this.state.dnum3+'---------------------',
+                    n:'your new number is '+this.state.dnum3,
                     totalUno: this.state.totalUno+this.state.dnum3,
                 })})}
         else if(this.state.qwe===0&&this.state.totalUno>21){
             this.setState({
-                n:this.state.n+'you lost',
+                n:this.state.n+' __You lost__',
                 qwe:this.state.qwe+1
             })
         }}
