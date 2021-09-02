@@ -72,10 +72,10 @@ class New extends Component {
                         cTotal: this.state.cTotal+this.state.cnum3,
                     },
                     ()=>{this.setState({
-                        fn:"computer's number: "+this.state.cTotal
+                        
                     })})})}
             else{this.setState({
-                fn:"computer's number: "+this.state.cTotal
+                
             })}}
         else if(this.state.cTotal<15&&this.state.no===0){
             this.setState({
@@ -88,19 +88,17 @@ class New extends Component {
                 },
                 ()=>{
                     this.setState({
-                    fn:"computer's number: "+this.state.cTotal
+                    
                 })})})}
         else if(this.state.no===0){this.setState({
-            fn:"computer's number: "+this.state.cTotal
+            
         })}
         
         console.log(this.state.cTotal)
         return this.state.cTotal
         
     }
-    Fin(){
-        console.log("hello world")
-    }
+    
 
     Finish() {
         //comparasiones
@@ -131,7 +129,8 @@ class New extends Component {
                 end: this.state.end+"Computer win"
             })}
         this.setState({
-                no:this.state.no+1
+                no:this.state.no+1,
+                fn:"Computer's number: "+ this.state.cTotal
             })   
         }
     
@@ -166,8 +165,8 @@ class New extends Component {
             })
         }}
     }
-    NG(){
-        return
+    reload = () => {
+        window.location.reload(true);
     }
     render() {
         
@@ -183,7 +182,7 @@ class New extends Component {
                 <div>     
                     <div className='compu'>
                         <h2 className='letter'>Computer's numbers</h2>
-                        <p>Computer's numbers are {this.state.cnum}  and {this.state.cnum2} </p>
+                        <p>Computer's numbers are {this.state.cnum}  and * </p>
                         <p>{this.state.fn}</p>
                     </div>
                     <div>
@@ -192,7 +191,7 @@ class New extends Component {
                     </div>
                 </div>
                 <div className="ng">
-                    <button className="bnn">New game</button>
+                    <button onClick={this.reload} className="bnn">New game</button>
                 </div>
             </div>
         )

@@ -25,7 +25,7 @@ const Bottom = () => {
                     <FontAwesomeIcon icon={faPhone} className="contact"/>
                 </a>
             </div>
-            <h3 className='h'>Made by WDES</h3>
+            <h3 className='h'></h3>
         </div>
     )
 }
